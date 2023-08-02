@@ -14,7 +14,7 @@ const Header = () => {
 
     const handleRangeChange = e => setRangeValue(e.target.value);
     const handleTextChange = e => setText(e.target.value);
-    const copyStateToClipboard = (state) => { navigator.clipboard.writeText(state) };
+    const copyStateToClipboard = (state) => navigator.clipboard.writeText(state);
 
     const getCode = () => {
         return `${"#".repeat(headingNumber)} ${text}`;
