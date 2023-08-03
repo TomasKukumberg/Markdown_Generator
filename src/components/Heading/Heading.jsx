@@ -7,19 +7,15 @@ const Header = () => {
     const getHeadingNumber = () => {
         return (range / 25) + 1;
     }
-    
-    const [text, setText] = useState('My heading');
-    const [range, setRange] = useState(0);
-    const [code, setCode] = useState('#');
-    const headingNumber = getHeadingNumber();
 
     const getCode = () => {
         return `${"#".repeat(headingNumber)} ${text}`;
     }
     
-    useEffect(() => {
-        setCode(getCode());
-    }, [range, text])
+    const [text, setText] = useState('My heading');
+    const [range, setRange] = useState(0);
+    const headingNumber = getHeadingNumber();
+    const code = getCode();
     
     return (
         <div className='max-w-[800px] m-auto md:p-12 p-6 my-4'>
